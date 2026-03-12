@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Positioning | Strategic Analysis</title>
+    <style>
+        /* GLOBAL RESET */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body{
+            background:#000;
+            color:white;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 80px;
+            background:rgba(0,0,0,0.95);
+            position:sticky;
+            top:0;
+            z-index:1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: gold; }
+
+        nav a{
+            margin:0 20px;
+            text-decoration:none;
+            color:white;
+            font-size:15px;
+            transition:0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover{
+            color:gold;
+        }
+
+        .btn-gold{
+            border:2px solid gold;
+            padding:10px 20px;
+            background:transparent;
+            color:white;
+            cursor:pointer;
+            border-radius:4px;
+            font-weight: bold;
+            transition:0.3s;
+        }
+
+        .btn-gold:hover{
+            background:gold;
+            color:black;
+        }
+
+        /* HERO SECTION */
+        .hero{
+            height:70vh;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+        }
+
+        .hero-content h1{
+            font-size:56px;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p{
+            font-size:20px;
+            color:#ccc;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* DASHBOARD SECTION */
+        .dashboard-section {
+            padding: 80px 10%;
+            background: #050505;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-header .line {
+            width: 80px;
+            height: 3px;
+            background: gold;
+            margin: 0 auto;
+        }
+
+        /* KPI CARDS */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .kpi-card {
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: transform 0.3s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            border-color: gold;
+        }
+
+        .kpi-card h3 {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .kpi-card .value {
+            font-size: 32px;
+            font-weight: bold;
+            color: gold;
+        }
+
+        /* DATA TABLE */
+        .table-container {
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 2px solid #222;
+            color: gold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #222;
+            font-size: 15px;
+            color: #ddd;
+        }
+
+        tr:hover td {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            padding: 100px 10%;
+            display: flex;
+            gap: 50px;
+            background: #000;
+        }
+
+        .contact-info { flex: 1; }
+        .contact-info h2 { font-size: 40px; margin-bottom: 20px; }
+        
+        form {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            background: #111;
+            border: 1px solid #333;
+            padding: 15px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: gold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            header { padding: 20px 40px; }
+            .hero-content h1 { font-size: 36px; }
+            .contact { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RETAIL<span>INSIGHT</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#insights">Insights</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn-gold">EXPORT REPORT</button>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Strategic Product Placement</h1>
+            <p>Analyzing 1,000+ data points to optimize shelf positioning, pricing, and foot traffic conversion.</p>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section">
+        <div class="section-header">
+            <h2>Market Performance Overview</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Avg. Product Price</h3>
+                <div class="value">$28.02</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Optimal Position</h3>
+                <div class="value">Aisle</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Total Sales Volume</h3>
+                <div class="value">1.76M</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Target Audience</h3>
+                <div class="value">Families</div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2 style="font-size: 24px;">Top Performing Products</h2>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Category</th>
+                        <th>Position</th>
+                        <th>Price</th>
+                        <th>Sales Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>179528</td>
+                        <td>Clothing</td>
+                        <td>End-cap</td>
+                        <td>$40.14</td>
+                        <td>2,999</td>
+                    </tr>
+                    <tr>
+                        <td>167648</td>
+                        <td>Electronics</td>
+                        <td>Aisle</td>
+                        <td>$39.47</td>
+                        <td>2,990</td>
+                    </tr>
+                    <tr>
+                        <td>183825</td>
+                        <td>Clothing</td>
+                        <td>Aisle</td>
+                        <td>$42.70</td>
+                        <td>2,989</td>
+                    </tr>
+                    <tr>
+                        <td>135786</td>
+                        <td>Electronics</td>
+                        <td>Aisle</td>
+                        <td>$27.36</td>
+                        <td>2,987</td>
+                    </tr>
+                    <tr>
+                        <td>123047</td>
+                        <td>Food</td>
+                        <td>Aisle</td>
+                        <td>$9.88</td>
+                        <td>2,985</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <h2>Let's Optimize Your Retail Space</h2>
+            <p>Get a detailed breakdown of your product positioning and competitive pricing strategy.</p>
+            <br>
+            <p><b>Email:</b> analysis@retailinsight.com</p>
+            <p><b>Phone:</b> +1 (555) 0123-456</p>
+        </div>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Business Email" required>
+            <textarea rows="5" placeholder="Tell us about your inventory..."></textarea>
+            <button type="submit" class="btn-gold" style="background: gold; color: black; border: none;">SUBMIT REQUEST</button>
+        </form>
+    </section>
+
+</body>
+</html>

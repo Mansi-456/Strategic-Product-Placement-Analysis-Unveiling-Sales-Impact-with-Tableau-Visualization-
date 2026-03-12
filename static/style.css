@@ -1,0 +1,126 @@
+/* GLOBAL STYLES */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    line-height: 1.6;
+}
+
+/* NAVBAR (Your original style) */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 80px;
+    background:rgba(0,0,0,0.95);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom: 1px solid #222;
+}
+
+.logo span { color: gold; }
+
+nav a{ margin:0 20px; text-decoration:none; color:white; transition:0.3s; }
+nav a:hover{ color:gold; }
+
+.btn{
+    border:2px solid gold;
+    padding:8px 18px;
+    background:transparent;
+    color:white;
+    cursor:pointer;
+    border-radius:4px;
+    transition:0.3s;
+}
+
+.btn:hover{ background:gold; color:black; }
+
+/* HERO SECTION */
+.hero{
+    height: 40vh; /* Shorter for dashboard style */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                      url("https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0"); /* Retail store image */
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+/* DASHBOARD LAYOUT */
+.dashboard-container{
+    max-width:1200px;
+    margin: -50px auto 50px auto; /* Overlap effect */
+    background:#111;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0px 10px 30px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 10;
+}
+
+/* KPI CARDS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid gold;
+    text-align: center;
+}
+
+.stat-card h3 { font-size: 14px; text-transform: uppercase; color: #888; }
+.stat-card .value { font-size: 32px; font-weight: bold; margin: 10px 0; color: gold; }
+.stat-card .label { font-size: 12px; color: #555; }
+
+/* DATA TABLE STYLE */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #151515;
+}
+
+.data-table th {
+    background: #222;
+    color: gold;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+    border-bottom: 2px solid #333;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+}
+
+.data-table tr:hover {
+    background: #1c1c1c;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .dashboard-container { margin: 20px; padding: 20px; }
+    header { padding: 20px; }
+    .hero h1 { font-size: 28px; }
+}
